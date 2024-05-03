@@ -1,10 +1,18 @@
 package ru.edu.springdata.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String language;
-    private String category; // history, it, health etc...
+    private String category;
+    // history, it, health etc...
+
 
     public Book() {
     }
